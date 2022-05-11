@@ -9,7 +9,7 @@ import java.io.*;
 
 
 public class Client {
-
+//cos tutaj
     public static void main(String args[]) throws FileNotFoundException {
         String host = "localhost";
         int port = 0;
