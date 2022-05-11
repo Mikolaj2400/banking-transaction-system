@@ -1,0 +1,13 @@
+proces logowania:
+- porownanie loginu do nazwy pliku
+- porownanie hasla z pliku do hasla wyslanego przez usera
+- if/else co w przypadku zalogowania (przejscie do switcha z wyborem dzialania dla usera
+          co w przypadku zlego hasla (tak jak w przypadku quit)
+-
+uzywanie klienta z konta:
+- odczytywanie pliku (saldo, nr konta)
+kazde polecenie dziala na pliku tekstowym
+- przelew na inne konto (jeśli ma środki i nr konta docelowego istnieje),
+  wypłacić środki (jeśli są dostępne),
+  dokonać wpłaty (po prostu zwiększa saldo),
+  sprawdzić stan konta (czyli odczytać saldo).
