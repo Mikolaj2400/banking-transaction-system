@@ -1,16 +1,12 @@
 package Client;
 
-/**
- *
- * @author dzelazny
- */
 import java.net.*;
 import java.io.*;
 
 
 public class Client {
 //cos tutaj
-    public static void main(String args[]) throws FileNotFoundException {
+    public static void main(String args[])  {
         String host = "localhost";
         int port = 0;
         try {
@@ -90,7 +86,7 @@ public class Client {
                     clientSocket.close();
                     System.exit(0);
                 }
-                brSockInp.readLine();
+                line = brSockInp.readLine();
                 System.out.println("Otrzymano: " + line);
             } catch (IOException e) {
                 System.out.println("Błąd wejścia-wyjścia: " + e);
