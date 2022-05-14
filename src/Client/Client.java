@@ -2,11 +2,12 @@ package Client;
 
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 
 
 public class Client {
-//cos tutaj
-    public static void main(String args[])  {
+    //cos tutaj
+    public static void main(String args[]) {
         String host = "localhost";
         int port = 0;
         try {
@@ -38,7 +39,6 @@ public class Client {
         DataOutputStream out = null;
 
 
-
         //w tym miejscy robimy switcha, za pomoca ktorego user wybierze co chce zrobic:
         //przelew na inne konto (jeśli ma środki i nr konta docelowego istnieje),
         //wypłacić środki (jeśli są dostępne),
@@ -58,19 +58,38 @@ public class Client {
             System.exit(-1);
         }
 
-        //tutaj musimy zrobic logowanie
+        //tutaj musimy zrobic logowanie (login)
         System.out.println("Podaj swój login");
-        try{
-            line = brLocalInp.readLine();
-            System.out.println("Wysyłam: " + line);
-            out.writeBytes(line + '\n');
-            out.flush();
-            line = brSockInp.readLine();
-            System.out.println("Otrzymano: " + line);
-        }catch(Exception e){
-            System.out.println("Błąd przy logowaniu");
-        }
 
+//            try {
+//                line = brLocalInp.readLine();
+//                System.out.println("Wysyłam: " + line);
+//                out.writeBytes(line + '\n');
+//                out.flush();
+//                line = brSockInp.readLine();
+//                System.out.println("Otrzymano: " + line);
+//                //tutaj musimy zrobic logowanie (haslo)
+//                System.out.println("Podaj swoje haslo");
+//                try {
+//                    line = brLocalInp.readLine();
+//                    System.out.println("Wysyłam: " + line);
+//                    out.writeBytes(line + '\n');
+//                    out.flush();
+//                    line = brSockInp.readLine();
+//                    System.out.println("Otrzymano: " + line);
+//                } catch (Exception e) {
+//                    System.out.println("Złe hasło");
+//                }
+//            } catch (Exception e) {
+//                System.out.println("Błąd przy logowaniu");
+//            }
+
+
+        System.out.println("Jaką transakcję chcesz wykonać? (Wpisz numer)");
+        System.out.println("1. Przelew na inne konto");
+        System.out.println("2. Wypłacić środki");
+        System.out.println("3. Dokonać wpłaty ");
+        System.out.println("4. Sprawdzić stan konta");
 
         //Pętla główna klienta
         while (true) {
