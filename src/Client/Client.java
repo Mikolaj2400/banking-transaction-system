@@ -38,7 +38,6 @@ public class Client {
         BufferedReader brLocalInp = null;
         DataOutputStream out = null;
 
-
         //w tym miejscy robimy switcha, za pomoca ktorego user wybierze co chce zrobic:
         //przelew na inne konto (jeśli ma środki i nr konta docelowego istnieje),
         //wypłacić środki (jeśli są dostępne),
@@ -84,12 +83,6 @@ public class Client {
 //                System.out.println("Błąd przy logowaniu");
 //            }
 
-
-        System.out.println("Jaką transakcję chcesz wykonać? (Wpisz numer)");
-        System.out.println("1. Przelew na inne konto");
-        System.out.println("2. Wypłacić środki");
-        System.out.println("3. Dokonać wpłaty ");
-        System.out.println("4. Sprawdzić stan konta");
 
         //Pętla główna klienta
         while (true) {
