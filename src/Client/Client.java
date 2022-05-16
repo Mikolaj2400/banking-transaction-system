@@ -57,39 +57,12 @@ public class Client {
             System.exit(-1);
         }
 
-        //tutaj musimy zrobic logowanie (login)
-       // System.out.println("Podaj swój login");
-
-//            try {
-//                line = brLocalInp.readLine();
-//                System.out.println("Wysyłam: " + line);
-//                out.writeBytes(line + '\n');
-//                out.flush();
-//                line = brSockInp.readLine();
-//                System.out.println("Otrzymano: " + line);
-//                //tutaj musimy zrobic logowanie (haslo)
-//                System.out.println("Podaj swoje haslo");
-//                try {
-//                    line = brLocalInp.readLine();
-//                    System.out.println("Wysyłam: " + line);
-//                    out.writeBytes(line + '\n');
-//                    out.flush();
-//                    line = brSockInp.readLine();
-//                    System.out.println("Otrzymano: " + line);
-//                } catch (Exception e) {
-//                    System.out.println("Złe hasło");
-//                }
-//            } catch (Exception e) {
-//                System.out.println("Błąd przy logowaniu");
-//            }
-
-
         //Pętla główna klienta
+        System.out.println("Podaj swoj login, aby sie zalogowac");
         while (true) {
             try {
                 line = brLocalInp.readLine();
                 if (line != null) {
-                    System.out.println("Wysyłam: " + line);
                     out.writeBytes(line + '\n');
                     out.flush();
                 }
