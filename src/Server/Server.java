@@ -40,7 +40,6 @@ public class Server {
         String passwordGigiel = Files.readAllLines(Paths.get("C:/Users/mikka/IdeaProjects/Server/gigiel")).get(2);
         String passwordMozol = Files.readAllLines(Paths.get("C:/Users/mikka/IdeaProjects/Server/mozol")).get(2);
 
-
         //czytanie salda bankowego
         String saldoBankoweKowalski = Files.readAllLines(Paths.get("C:/Users/mikka/IdeaProjects/Server/kowalski")).get(5);
         String saldoBankoweGigiel = Files.readAllLines(Paths.get("C:/Users/mikka/IdeaProjects/Server/gigiel")).get(5);
@@ -239,9 +238,8 @@ public class Server {
                         break;
                     }
                     if (line.equals(fileNameKowalski)) { //sprawdza plik Kowalski
-                        out.writeBytes("Witaj " + line + " Podaj haslo" + "\n\r");
-                        System.out.println("Wysłano linię: " + "Witaj " + line + "\nPodaj hasło");
-                        out.flush();
+                        out.writeBytes("Witaj " + line + " Podaj haslo" + "\n");
+                        System.out.println("Wysłano linię: " + "Witaj " + line + "Podaj haslo");
                         line = brinp.readLine();
                         System.out.println("Odczytano linię: " + line);
                         if (line.equals(passwordKowalski)) {

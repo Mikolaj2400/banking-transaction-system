@@ -58,7 +58,7 @@ public class Client {
         }
 
         //tutaj musimy zrobic logowanie (login)
-        System.out.println("Podaj swój login");
+       // System.out.println("Podaj swój login");
 
 //            try {
 //                line = brLocalInp.readLine();
