@@ -24,7 +24,6 @@ public class Server {
         ServerSocket serverSocket = null;
         Socket socket = null;
         BufferedReader brinp = null;
-
         DataOutputStream out = null;
 
         try {
@@ -177,7 +176,7 @@ public class Server {
 
                             default:
                                 System.out.println("Zły numer");
-                                out.writeBytes("Podales zly numer transakcji");
+                                out.writeBytes("Podales zly numer transakcji.  ");
                                 break;
                         }
                     }

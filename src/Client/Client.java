@@ -1,13 +1,16 @@
 package Client;
 
-import java.net.*;
-import java.io.*;
-import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ConnectException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class Client {
-    //cos tutaj
     public static void main(String args[]) {
+
         String host = "localhost";
         int port = 0;
         try {
@@ -38,12 +41,6 @@ public class Client {
         BufferedReader brLocalInp = null;
         DataOutputStream out = null;
 
-        //w tym miejscy robimy switcha, za pomoca ktorego user wybierze co chce zrobic:
-        //przelew na inne konto (jeśli ma środki i nr konta docelowego istnieje),
-        //wypłacić środki (jeśli są dostępne),
-        //dokonać wpłaty (po prostu zwiększa saldo),
-        //sprawdzić stan konta (czyli odczytać saldo).
-
         //Utworzenie strumieni
         try {
             out = new DataOutputStream(clientSocket.getOutputStream());
@@ -71,8 +68,10 @@ public class Client {
                     clientSocket.close();
                     System.exit(0);
                 }
+
                 line = brSockInp.readLine();
-                System.out.println("Otrzymano: " + line);
+                System.out.println(line);
+
             } catch (IOException e) {
                 System.out.println("Błąd wejścia-wyjścia: " + e);
                 System.exit(-1);

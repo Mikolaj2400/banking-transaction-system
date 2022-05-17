@@ -1,6 +1,7 @@
 package Server;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,7 +58,7 @@ public class Klient {
             //zmiana w pliku
             for (int i = 0; i < fileContent.size(); i++) {
                 if (fileContent.get(i).equals(Integer.toString(saldo))) {
-                    saldo += kwota;
+                        saldo += kwota;
                     fileContent.set(i, Integer.toString(saldo));
                     break;
                 }
@@ -70,11 +71,11 @@ public class Klient {
 
     public void zmniejszStanKonta(int kwota) {
 
-        zwiekszStanKonta(-kwota);
+            zwiekszStanKonta(-kwota);
     }
 
-    public int getStanKonta() {
-
-        return saldo;
+    public int getStanKonta() throws IOException {
+       int saldoPoPrzelewie = Integer.parseInt(Files.readAllLines(Paths.get(sciezkaDoPliku)).get(5));
+        return saldoPoPrzelewie;
     }
 }
